@@ -1,12 +1,14 @@
 import {  Text, View } from 'react-native'
 import { Link } from 'expo-router'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const index = () => {
   return (
-    <View className='flex items-center justify-center w-[100vw] h-[100vh]'>
-      <Text className='text-3xl font-pblack'>Welcome!</Text>
-      <Link href="/home">Go to profile.</Link>
+    <View>
+      <SafeAreaView>
+        
+      </SafeAreaView>
     </View>
   )
 }
