@@ -23,12 +23,13 @@ const index = () => {
             <Text className='text-3xl text-white font-bold text-center'>
               Discover endless possibilities with{" "}
               <Text className='text-secondary-200'>Aora</Text>
+            </Text>
               <Image
               source={images.path} 
-              className='w-[136px] h-[15px] absolute -bottom-2 -right-8'
+              className='w-[136px] h-[15px] absolute'
               resizeMode='contain'
               />
-            </Text>
+
           </View>
         </ScrollView>
       </SafeAreaView>
