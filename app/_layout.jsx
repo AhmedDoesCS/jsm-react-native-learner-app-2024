@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { useEffect } from 'react'
+import { StyleSheet, Text, View, StatusBar } from 'react-native'
+import { useEffect } from 'react' 
 import { SplashScreen, Slot, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
 import React from 'react'

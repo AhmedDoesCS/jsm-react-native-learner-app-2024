@@ -15,6 +15,15 @@ const index = () => {
             className='w-[130px] h-[84px]'
             resizeMode='contain'
             />
+            <Image 
+            source={images.cards}
+            className='max-w-[380px] w-full h-[300px]'
+            resizeMode='contain'
+            />
+            <Text className='text-3xl text-white font-bold text-center'>
+              Discover endless possibilities with {" "}
+              <Text className='text-secondary-200'>Aora</Text>
+            </Text>
           </View>
         </ScrollView>
       </SafeAreaView>
