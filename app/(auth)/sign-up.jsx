@@ -7,7 +7,7 @@ import CustomButton from '@/components/CustomButton'
 import { Link, router } from 'expo-router'
 import { createUser } from '../../lib/appwrite'
 
-const SignUp = async () => {
+const SignUp =  () => {
   const [form, setForm] = useState({
     username:"",
     email: "",
