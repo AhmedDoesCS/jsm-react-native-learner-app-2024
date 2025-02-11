@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import { useEffect } from 'react' 
 import { SplashScreen, Slot, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
+import GlobalProvider from '../context/GlobalProvider'
 import React from 'react'
 import '../global.css'
 
@@ -32,12 +33,16 @@ const RootLayout = () => {
     return null;
   }
 
-  return <Stack>
-    <Stack.Screen name='(tabs)' options={{headerShown: false}}/>
-    <Stack.Screen name='(auth)' options={{headerShown: false}}/>
-    {/* <Stack.Screen name='/search/[query]' options={{headerShown: false}}/> */}
-    <Stack.Screen name='index' options={{headerShown:false}} />
-  </Stack>
+  return (
+  <GlobalProvider>
+    <Stack>
+      <Stack.Screen name='(tabs)' options={{headerShown: false}}/>
+      <Stack.Screen name='(auth)' options={{headerShown: false}}/>
+      {/* <Stack.Screen name='/search/[query]' options={{headerShown: false}}/> */}
+      <Stack.Screen name='index' options={{headerShown:false}} />
+    </Stack>
+  </GlobalProvider>
+  )
 }
 
 

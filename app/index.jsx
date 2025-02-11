@@ -6,8 +6,13 @@ import React from 'react'
 import {images} from '../constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomButton from '@/components/CustomButton'
+import { useGlobalContext } from '@/context/GlobalProvider'
 
 const index = () => {
+  const {isLoading, isLoggedIn} = useGlobalContext();
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />
+  
   return (
     <View>
       <SafeAreaView className='bg-primary h-full'>
