@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { useEffect } from 'react' 
 import { SplashScreen, Slot, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
 import GlobalProvider from '../context/GlobalProvider'
 import React from 'react'
 import '../global.css'
+import { StatusBar } from 'expo-status-bar'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,6 +36,7 @@ const RootLayout = () => {
 
   return (
   <GlobalProvider>
+    <StatusBar />
     <Stack>
       <Stack.Screen name='(tabs)' options={{headerShown: false}}/>
       <Stack.Screen name='(auth)' options={{headerShown: false}}/>

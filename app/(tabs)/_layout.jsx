@@ -3,6 +3,7 @@ import {Tabs, Redirect } from 'expo-router'
 import { icons } from '../../constants'
 import "../../global.css"
 import React from 'react'
+import { StatusBar } from 'expo-status-bar'
 
 const TabIcon = ({icon, color, name, focused}) => {
     return (
@@ -24,6 +25,7 @@ const TabIcon = ({icon, color, name, focused}) => {
 const TabsLayout = () => {
   return (
     <>
+        <StatusBar />
         <Tabs
             screenOptions={{
                 tabBarShowLabel: false,
