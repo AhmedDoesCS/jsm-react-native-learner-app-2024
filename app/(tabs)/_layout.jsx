@@ -6,7 +6,7 @@ import React from 'react'
 
 const TabIcon = ({icon, color, name, focused}) => {
     return (
-        <View className='items-center justify-center gap-1'>
+        <View className='items-center justify-center gap-1 w-20'>
             <Image 
                 source={icon}
                 style={{width:20, height:20}}
@@ -14,7 +14,7 @@ const TabIcon = ({icon, color, name, focused}) => {
                 tintColor={color}
                 className="w-6 h-6"
             />
-            <Text className={`${focused ?  'font-psemibold' : 'font-pregular' } text-xs`} style={{color: color}}>
+            <Text className={`${focused ? 'font-psemibold' : 'font-pregular' } text-xs`} style={{color: color}}>
                 {name}
             </Text>
         </View>
