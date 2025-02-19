@@ -8,15 +8,19 @@ import Trending from '@/components/Trending'
 import EmptyState from '@/components/EmptyState'
 import { getAllPosts } from '@/lib/appwrite'
 
+import useAppwrite from '../../lib/useAppwrite'
+
 const Home = () => {
+  const { data: posts, refetch} = useAppwrite(getAllPosts)
 
   const [refreshing, setRefreshing] = useState(false)
 
   const onRefresh = async () => {
     setRefreshing(true);
-    // re call videos -> if any new videos appeared
+    await refetch();
     setRefreshing(false);
   }
+
 
   return (
     <SafeAreaView className='bg-primary border-2 h-full'>
