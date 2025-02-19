@@ -10,10 +10,10 @@ const TabIcon = ({icon, color, name, focused}) => {
         <View className='items-center justify-center gap-1 w-20'>
             <Image 
                 source={icon}
-                style={{width:20, height:20}}
+                style={{width:20, height:20}} // Change these attributes to fix alignment
                 resizeMode="contain"
                 tintColor={color}
-                className="w-6 h-6"
+                className="w-6"
             />
             <Text className={`${focused ? 'font-psemibold' : 'font-pregular' } text-xs`} style={{color: color}}>
                 {name}
@@ -31,11 +31,15 @@ const TabsLayout = () => {
                 tabBarShowLabel: false,
                 tabBarActiveTintColor: '#FFA001',
                 tabBarInactiveTintColor: "#CDCDE0",
+                tabBarItemStyle: {
+                    height:60
+                },
                 tabBarStyle: {
                     backgroundColor: '#161622',
-                    borderTopWidth: 1,
-                    borderTopColor: '#232533',
-                    height: 50,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 0,
+                    margin: 0,
                 }
             }}
         >
