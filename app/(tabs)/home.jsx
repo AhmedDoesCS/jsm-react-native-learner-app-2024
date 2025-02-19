@@ -25,10 +25,10 @@ const Home = () => {
   return (
     <SafeAreaView className='bg-primary border-2 h-full'>
       <FlatList 
-        data={[{id: 1}]}
+        data={posts}
         keyExtractor={(item) => item.$id} 
         renderItem={({ item }) => (
-          <Text className='text-3xl text-white'>{item.id}</Text>
+          <Text className='text-3xl text-white'>{item.title}</Text>
           )}
         ListHeaderComponent={() => (
           <View className='my-6 px-4 space-y-6'>
@@ -70,7 +70,7 @@ const Home = () => {
             />
           </Text>
         )}
-        refreshControl={<RefreshControl refreshing={onRefresh} />}
+        // refreshControl={<RefreshControl refreshing={onRefresh} />}
         />
     </SafeAreaView>
   )
