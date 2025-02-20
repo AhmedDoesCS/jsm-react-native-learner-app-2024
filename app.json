@@ -16,7 +16,7 @@
         "foregroundImage": "",
         "backgroundColor": "#ffffff"
       },
-      "package":"com.ahmed.aora"
+      "package": "com.ahmed.aora"
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +33,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-video"
     ],
     "experiments": {
       "typedRoutes": true
