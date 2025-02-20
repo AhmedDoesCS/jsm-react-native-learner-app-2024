@@ -2,6 +2,7 @@ import { icons } from '@/constants'
 import { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native'
 import * as Animatable from "react-native-animatable"
+import { useVideoPlayer, VideoView } from 'expo-video'
 
 
 const zoomIn = {
@@ -23,6 +24,11 @@ const zoomOut = {
 }
 
 const TrendingItem = ({ activeItem, item }) => {
+  const player = useVideoPlayer("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", player => {
+    player.loop = false
+    player.play()
+  })
+
   const [play, setPlay] = useState(false)
 
   return (
@@ -31,18 +37,7 @@ const TrendingItem = ({ activeItem, item }) => {
         duration={500}
     >
       {play ? (
-        <Video
-            source={{ uri: item.video }}
-            className='w-52 h-72 rounded-[35px] mt-3 bg-white/10'
-            resizeMode={ResizeMode.CONTAIN}
-            useNativeControls
-            shouldPlay
-            onPlaybackStatusUpdate={(status) => {
-              if (status.didJustFinish) {
-                setPlay(false);
-              }
-            }} 
-         />
+        <VideoView player={player} className='w-50 h-60' />
       ) : (
         <TouchableOpacity
           activeOpacity={0.7}
