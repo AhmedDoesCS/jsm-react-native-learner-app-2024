@@ -2,7 +2,7 @@ import { icons } from '@/constants'
 import { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native'
 import * as Animatable from "react-native-animatable"
-import { Video } from 'expo-av'
+import { Video, ResizeMode } from 'expo-av'
 
 const zoomIn = {
   0: {
@@ -31,7 +31,9 @@ const TrendingItem = ({ activeItem, item }) => {
         duration={500}
     >
       {play ? (
-        <Video />
+        <Video
+            source={{ uri: item.video }}
+         />
       ) : (
         <TouchableOpacity
           activeOpacity={0.7}
