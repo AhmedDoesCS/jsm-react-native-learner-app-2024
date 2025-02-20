@@ -1,6 +1,6 @@
 import { icons } from '@/constants'
 import { useState } from 'react'
-import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image, StyleSheet } from 'react-native'
 import * as Animatable from "react-native-animatable"
 import { useVideoPlayer, VideoView } from 'expo-video'
 
@@ -37,7 +37,7 @@ const TrendingItem = ({ activeItem, item }) => {
         duration={500}
     >
       {play ? (
-        <VideoView player={player} className='w-50 h-60' />
+        <VideoView style={styles.video} player={player} />
       ) : (
         <TouchableOpacity
           activeOpacity={0.7}
@@ -86,6 +86,24 @@ const Trending = ({posts}) => {
     horizontal
    />
   )
+  
 }
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    flex: 1,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 50,
+  },
+  video: {
+    width: 350,
+    height: 275,
+  },
+  controlsContainer: {
+    padding: 10,
+  },
+});
 
 export default Trending
